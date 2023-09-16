@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 
         builder.setPositiveButton("Save") { dialog, _ ->
             var savedText = ib.inputEditText.text.toString()
-            Toast.makeText(requireContext(), savedText, Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Task Added to the ToDo list", Toast.LENGTH_SHORT).show()
 
             //here we add the task to the db
             viewModel.addTask(Task(0,savedText))
