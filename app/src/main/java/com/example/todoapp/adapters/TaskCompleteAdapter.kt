@@ -30,11 +30,20 @@ class TaskCompleteAdapter (private val context: Context, private val list: List<
         if(holder is MyViewHolder){
             holder.rb_textview.text=task.title
 
-            holder.done_btn.setOnClickListener{
+            holder.undo_btn.setOnClickListener{
                 if(onClickListener!=null){
                     onClickListener!!.onDoneClick(task)
                 }
             }
+
+            holder.delete_btn.setOnClickListener{
+                if(onClickListener!=null){
+                    onClickListener!!.onDeleteClick(task)
+                }
+            }
+
+
+
 
 
         }
@@ -42,7 +51,8 @@ class TaskCompleteAdapter (private val context: Context, private val list: List<
 
     class MyViewHolder(private val view: View): RecyclerView.ViewHolder(view){
         val rb_textview=view.findViewById<TextView>(R.id.item_task_complete)
-        val done_btn=view.findViewById<ImageView>(R.id.done_icon_complete)
+        val undo_btn=view.findViewById<ImageView>(R.id.icon_undo)
+        val delete_btn=view.findViewById<ImageView>(R.id.icon_delete)
 
     }
 
@@ -52,7 +62,7 @@ class TaskCompleteAdapter (private val context: Context, private val list: List<
 
     interface OnClickListener{
         fun onDoneClick(task:Task)
-        //fun onDeleteClick(model:Task)
+        fun onDeleteClick(model:Task)
 
     }
 }

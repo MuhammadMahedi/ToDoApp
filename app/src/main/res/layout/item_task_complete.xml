@@ -23,11 +23,18 @@
             android:textStyle="bold"
             />
         <ImageView
-            android:id="@+id/done_icon_complete"
+            android:id="@+id/icon_undo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
             android:src="@drawable/ic_undo"
+            />
+        <ImageView
+            android:id="@+id/icon_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_delete"
             />
 
     </LinearLayout>
